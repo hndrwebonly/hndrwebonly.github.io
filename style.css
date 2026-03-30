@@ -188,125 +188,8 @@ body {
   background: rgba(45,60,255,0.16);
 }
 
-/* ---------------- */
-/* スマホ */
-/* ---------------- */
-@media (max-width: 768px) {
-
-  body {
-    font-size: 14px;
-    line-height: 1.6;
-  }
-
-  .inner {
-    padding: 0 14px;
-  }
-
-  /* ヘッダー折り返しはここだけ */
-  .header .inner {
-    height: auto;
-    padding: 10px 0;
-    flex-wrap: wrap;
-    align-items: flex-start;
-  }
-
-  /* ナビ横スクロール */
-  .nav {
-    overflow-x: auto;
-    white-space: nowrap;
-    width: 100%;
-    padding-bottom: 4px;
-  }
-
-  .nav a {
-    font-size: 13px;
-    padding: 6px 8px;
-  }
-
-  /* CTA */
-  .cta {
-    padding: 10px 14px;
-    font-size: 13px;
-  }
-
-  /* ヒーロー */
-  .hero {
-    padding: 36px 0;
-  }
-
-  .hero h1 {
-    font-size: 22px;
-  }
-
-  /* 本文 */
-  .content .inner {
-    padding: 22px;
-    border-radius: 12px;
-  }
-
-  /* FAQ */
-  .faq-item {
-    margin-bottom: 22px;
-  }
-
-  .question {
-    padding: 12px;
-    font-size: 14px;
-  }
-
-  .text {
-    margin-left: 10px;
-  }
-
-  .box {
-    margin-left: 10px;
-  }
-}
-
-/* ---------------- */
-/* PC強制安定（重要） */
-/* ---------------- */
-@media (min-width: 769px) {
-  .header .inner {
-    flex-wrap: nowrap; /* 折り返し禁止 */
-  }
-
-  body {
-    font-size: 15px;
-    line-height: 1.8;
-  }
-}
-@media (max-width: 768px) {
-
-  /* ナビ消す */
-  .nav {
-    display: none;
-  }
-
-  /* レイアウトを縦UI化 */
-  .content .inner {
-    box-shadow: none;
-    border-radius: 0;
-    padding: 16px;
-  }
-
-  /* カードをリストUIに */
-  .faq-item {
-    border-bottom: 1px solid #eee;
-    margin-bottom: 0;
-    padding: 12px 0;
-  }
-
-  .question {
-    background: none;
-    box-shadow: none;
-    padding: 0;
-    font-size: 14px;
-  }
-
-}
 /* ========================= */
-/* スマホ専用UI（完全上書き） */
+/* スマホ */
 /* ========================= */
 @media (max-width: 768px) {
 
@@ -316,8 +199,10 @@ body {
     line-height: 1.6;
   }
 
+  /* 横幅 */
   .inner {
     max-width: none;
+    width: 100%;
     padding: 0 12px;
   }
 
@@ -329,12 +214,19 @@ body {
     gap: 8px;
   }
 
-  /* ナビは一旦消す（重要） */
+  /* ナビ */
   .nav {
-    display: none;
+    overflow-x: auto;
+    white-space: nowrap;
+    width: 100%;
   }
 
-  /* CTAは残す */
+  .nav a {
+    font-size: 13px;
+    padding: 6px 8px;
+  }
+
+  /* CTA */
   .cta {
     margin-left: auto;
     font-size: 13px;
@@ -351,79 +243,14 @@ body {
     line-height: 1.4;
   }
 
-  /* --- コンテンツ全体 --- */
+  /* --- コンテンツ --- */
   .content .inner {
     padding: 16px;
     border-radius: 0;
     box-shadow: none;
   }
 
-  /* --- FAQ（カード→リスト化） --- */
-  .faq-item {
-    margin: 0;
-    padding: 14px 0;
-    border-bottom: 1px solid #eee;
-  }
-
-  /* --- 見出し（フラット化） --- */
-  .question {
-    background: none;
-    box-shadow: none;
-    padding: 0;
-    margin-bottom: 6px;
-    font-size: 14px;
-    font-weight: bold;
-    border-left: 3px solid #2d3cff;
-    padding-left: 8px;
-  }
-
-  /* --- テキスト --- */
-  .text {
-    margin: 0;
-    font-size: 13px;
-    line-height: 1.6;
-  }
-
-  /* --- 強調（視認性UP） --- */
-  .highlight {
-    display: inline-block;
-    background: #ffecec;
-    color: #c00;
-    padding: 2px 4px;
-    border-radius: 4px;
-    margin-top: 4px;
-  }
-
-  /* --- リンク --- */
-  .text a {
-    display: inline-block;
-    margin-top: 8px;
-    padding: 6px 10px;
-    font-size: 12px;
-  }
-
-  /* --- 無駄要素削減 --- */
-  .box {
-    display: none;
-  }
-}
-@media (max-width: 768px) {
-
-  /* 横幅制限を解除（最重要） */
-  .inner {
-    max-width: none;
-    width: 100%;
-    padding: 0 12px;
-  }
-
-  /* 外側の余白も消す */
-  .content .inner {
-    padding: 16px;
-    border-radius: 0;
-    box-shadow: none;
-  }
-
-  /* カード感を軽くする */
+  /* --- FAQ --- */
   .faq-item {
     margin-bottom: 16px;
   }
@@ -431,12 +258,18 @@ body {
   .question {
     padding: 10px;
     font-size: 14px;
+    border-radius: 8px;
   }
 
   .text {
-    margin-left: 0;
+    margin: 8px 0 0 0;
     font-size: 14px;
     line-height: 1.6;
+  }
+
+  /* インデント削除 */
+  .box {
+    margin-left: 0;
   }
 
 }
