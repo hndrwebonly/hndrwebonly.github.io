@@ -407,3 +407,36 @@ body {
     display: none;
   }
 }
+@media (max-width: 768px) {
+
+  /* 横幅制限を解除（最重要） */
+  .inner {
+    max-width: none;
+    width: 100%;
+    padding: 0 12px;
+  }
+
+  /* 外側の余白も消す */
+  .content .inner {
+    padding: 16px;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  /* カード感を軽くする */
+  .faq-item {
+    margin-bottom: 16px;
+  }
+
+  .question {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .text {
+    margin-left: 0;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+}
