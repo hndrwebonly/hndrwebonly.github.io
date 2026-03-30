@@ -276,3 +276,32 @@ body {
     line-height: 1.8;
   }
 }
+@media (max-width: 768px) {
+
+  /* ナビ消す */
+  .nav {
+    display: none;
+  }
+
+  /* レイアウトを縦UI化 */
+  .content .inner {
+    box-shadow: none;
+    border-radius: 0;
+    padding: 16px;
+  }
+
+  /* カードをリストUIに */
+  .faq-item {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 0;
+    padding: 12px 0;
+  }
+
+  .question {
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    font-size: 14px;
+  }
+
+}
