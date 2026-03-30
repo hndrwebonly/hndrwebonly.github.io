@@ -13,7 +13,7 @@ body {
    共通（横幅を統一）
 ========================= */
 .inner {
-  max-width: 900px; /* ←統一 */
+  max-width: 900px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -33,7 +33,7 @@ body {
   height: 64px;
   gap: 12px;
 
-  max-width: 900px; /* ←統一 */
+  max-width: 900px;
   margin: 0 auto;
   padding: 0 20px;
 
@@ -47,13 +47,14 @@ body {
   white-space: nowrap;
 }
 
-/* ナビ */
+/* ナビ（PC） */
 .nav {
   display: flex;
   gap: 10px;
   flex-wrap: nowrap;
 }
 
+/* ナビリンク */
 .nav a {
   position: relative;
   text-decoration: none;
@@ -63,6 +64,7 @@ body {
   font-weight: 500;
   border-radius: 6px;
   white-space: nowrap;
+  overflow: hidden;
 }
 
 /* 背景アニメーション */
@@ -88,6 +90,7 @@ body {
 
 /* CTA */
 .cta {
+  margin-left: auto; /* ←PCでも右固定 */
   background: linear-gradient(135deg, #2d3cff, #5a6bff);
   color: #fff;
   padding: 10px 16px;
@@ -189,31 +192,42 @@ body {
     padding: 0 12px;
   }
 
-  /* ヘッダー */
+  /* ヘッダー構造を2段に分離 */
   .header .inner {
     flex-wrap: wrap;
     height: auto;
     padding: 10px 0;
+    align-items: center;
   }
 
+  /* ロゴ左 */
   .logo {
-    flex: 1;
+    flex: 1 1 auto;
   }
 
+  /* CTA右上固定 */
   .cta {
     order: 2;
+    margin-left: auto;
     font-size: 13px;
     padding: 8px 12px;
   }
 
-  /* ナビを下に落とす */
+  /* ナビを完全に下段へ */
   .nav {
     order: 3;
+    flex-basis: 100%; /* ←最重要 */
     width: 100%;
-    overflow-x: auto;
     display: flex;
+    overflow-x: auto;
     gap: 8px;
-    padding-top: 6px;
+    margin-top: 8px;
+    padding-bottom: 2px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .nav::-webkit-scrollbar {
+    display: none;
   }
 
   .nav a {
@@ -235,5 +249,4 @@ body {
   .box {
     margin-left: 0;
   }
-
 }
