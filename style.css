@@ -3,11 +3,12 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background: #fff;
   color: #333;
+  line-height: 1.7;
 }
 
 /* 共通 */
 .inner {
-  max-width: 900px;
+  max-width: 720px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -22,12 +23,22 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 70px;
+  height: 64px;
+  gap: 12px;
 }
 
+/* ロゴ */
 .logo {
   font-weight: bold;
   color: #5a6b7c;
+  white-space: nowrap; /* 折り返し防止 */
+}
+
+/* ナビ */
+.nav {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0; /* 潰れ防止 */
 }
 
 .nav a {
@@ -41,6 +52,7 @@ body {
   border-radius: 6px;
   z-index: 1;
   transition: color 0.2s;
+  white-space: nowrap;
 }
 
 /* 背景アニメーション */
@@ -60,7 +72,6 @@ body {
   transform: scaleX(1);
 }
 
-/* ホバー時の文字 */
 .nav a:hover {
   color: #2d3cff;
 }
@@ -69,17 +80,19 @@ body {
 .cta {
   background: linear-gradient(135deg, #2d3cff, #5a6bff);
   color: #fff;
-  padding: 10px 18px;
+  padding: 10px 16px;
   border-radius: 8px;
   text-decoration: none;
   display: inline-block;
-  box-shadow: 0 4px 12px rgba(45,60,255,0.3);
+  box-shadow: 0 4px 12px rgba(45,60,255,0.25);
   transition: 0.2s;
+  font-size: 14px;
+  white-space: nowrap;
 }
 
 .cta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(45,60,255,0.35);
+  box-shadow: 0 6px 16px rgba(45,60,255,0.3);
 }
 
 .cta:active {
@@ -90,13 +103,13 @@ body {
 /* ヒーロー */
 .hero {
   background: #e5e5e5;
-  padding: 60px 0;
+  padding: 50px 0;
 }
 
 .hero h1 {
   font-family: "Noto Sans JP", sans-serif;
   font-weight: 800;
-  font-size: 28px;
+  font-size: 26px;
   letter-spacing: 0.03em;
 }
 
@@ -110,24 +123,24 @@ body {
 /* 本文 */
 .content .inner {
   background: #fff;
-  padding: 40px;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+  padding: 32px;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
 }
 
-/* FAQ単位 */
+/* FAQ */
 .faq-item {
-  margin-bottom: 36px;
+  margin-bottom: 28px;
 }
 
-/* Qボックス */
+/* 見出し */
 .question {
   background: #dcdcdc;
-  padding: 16px;
-  border-radius: 12px;
+  padding: 14px;
+  border-radius: 10px;
   font-weight: bold;
-  margin-bottom: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  margin-bottom: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
 }
 
 .q {
@@ -137,9 +150,17 @@ body {
 
 /* テキスト */
 .text {
-  margin: 12px 0 0 20px;
+  margin: 10px 0 0 16px;
   line-height: 1.8;
   color: #444;
+}
+
+/* 強調 */
+.highlight {
+  background: #ffecec;
+  color: #c00;
+  padding: 2px 4px;
+  border-radius: 4px;
 }
 
 /* 補助ボックス */
@@ -147,7 +168,7 @@ body {
   height: 50px;
   background: #dcdcdc;
   border-radius: 10px;
-  margin: 20px 0 20px 20px;
+  margin: 16px 0 16px 16px;
 }
 
 /* リンク */
@@ -167,40 +188,91 @@ body {
   background: rgba(45,60,255,0.16);
 }
 
+/* ---------------- */
 /* スマホ */
+/* ---------------- */
 @media (max-width: 768px) {
 
-  .inner {
-    padding: 0 16px;
+  body {
+    font-size: 14px;
+    line-height: 1.6;
   }
 
+  .inner {
+    padding: 0 14px;
+  }
+
+  /* ヘッダー折り返しはここだけ */
+  .header .inner {
+    height: auto;
+    padding: 10px 0;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  /* ナビ横スクロール */
+  .nav {
+    overflow-x: auto;
+    white-space: nowrap;
+    width: 100%;
+    padding-bottom: 4px;
+  }
+
+  .nav a {
+    font-size: 13px;
+    padding: 6px 8px;
+  }
+
+  /* CTA */
+  .cta {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+
+  /* ヒーロー */
   .hero {
-    padding: 40px 0;
+    padding: 36px 0;
   }
 
   .hero h1 {
-    font-size: 24px;
+    font-size: 22px;
   }
 
+  /* 本文 */
   .content .inner {
-    padding: 24px;
+    padding: 22px;
     border-radius: 12px;
+  }
+
+  /* FAQ */
+  .faq-item {
+    margin-bottom: 22px;
   }
 
   .question {
     padding: 12px;
+    font-size: 14px;
   }
 
   .text {
-    margin-left: 12px;
+    margin-left: 10px;
   }
 
   .box {
-    margin-left: 12px;
+    margin-left: 10px;
+  }
+}
+
+/* ---------------- */
+/* PC強制安定（重要） */
+/* ---------------- */
+@media (min-width: 769px) {
+  .header .inner {
+    flex-wrap: nowrap; /* 折り返し禁止 */
   }
 
-  .cta {
-    padding: 12px 16px;
-    font-size: 14px;
+  body {
+    font-size: 15px;
+    line-height: 1.8;
   }
 }
