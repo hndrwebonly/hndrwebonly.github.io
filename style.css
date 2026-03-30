@@ -305,3 +305,105 @@ body {
   }
 
 }
+/* ========================= */
+/* スマホ専用UI（完全上書き） */
+/* ========================= */
+@media (max-width: 768px) {
+
+  /* --- 全体 --- */
+  body {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .inner {
+    max-width: none;
+    padding: 0 12px;
+  }
+
+  /* --- ヘッダー --- */
+  .header .inner {
+    height: auto;
+    flex-wrap: wrap;
+    padding: 10px 0;
+    gap: 8px;
+  }
+
+  /* ナビは一旦消す（重要） */
+  .nav {
+    display: none;
+  }
+
+  /* CTAは残す */
+  .cta {
+    margin-left: auto;
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  /* --- ヒーロー --- */
+  .hero {
+    padding: 28px 0;
+  }
+
+  .hero h1 {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+
+  /* --- コンテンツ全体 --- */
+  .content .inner {
+    padding: 16px;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  /* --- FAQ（カード→リスト化） --- */
+  .faq-item {
+    margin: 0;
+    padding: 14px 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  /* --- 見出し（フラット化） --- */
+  .question {
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    border-left: 3px solid #2d3cff;
+    padding-left: 8px;
+  }
+
+  /* --- テキスト --- */
+  .text {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  /* --- 強調（視認性UP） --- */
+  .highlight {
+    display: inline-block;
+    background: #ffecec;
+    color: #c00;
+    padding: 2px 4px;
+    border-radius: 4px;
+    margin-top: 4px;
+  }
+
+  /* --- リンク --- */
+  .text a {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  /* --- 無駄要素削減 --- */
+  .box {
+    display: none;
+  }
+}
