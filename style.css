@@ -34,6 +34,8 @@ body {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 24px;
+
+  flex-wrap: nowrap; /* PC固定 */
 }
 
 /* ロゴ */
@@ -48,6 +50,7 @@ body {
   display: flex;
   gap: 6px;
   flex-shrink: 0;
+  flex-wrap: nowrap; /* PCで折れないよう固定 */
 }
 
 .nav a {
@@ -202,7 +205,7 @@ body {
 }
 
 /* =========================
-   スマホ対応
+   スマホ対応（ここだけ上書き）
 ========================= */
 @media (max-width: 768px) {
 
@@ -211,18 +214,16 @@ body {
     line-height: 1.6;
   }
 
-  /* 横幅 */
   .inner {
     max-width: none;
     width: 100%;
-    padding: 0 10px;
+    padding: 0 12px;
   }
 
-  /* ===== ヘッダー ===== */
+  /* ヘッダーを2段構造 */
   .header .inner {
     height: auto;
     flex-wrap: wrap;
-    align-items: center;
     padding: 10px 0;
     gap: 8px;
   }
@@ -237,7 +238,6 @@ body {
     padding: 8px 12px;
   }
 
-  /* ナビを2段目＋横スクロール */
   .nav {
     order: 3;
     width: 100%;
@@ -259,7 +259,7 @@ body {
     flex: 0 0 auto;
   }
 
-  /* ===== ヒーロー ===== */
+  /* ヒーロー */
   .hero {
     padding: 28px 0;
   }
@@ -269,14 +269,14 @@ body {
     line-height: 1.4;
   }
 
-  /* ===== コンテンツ ===== */
+  /* コンテンツ */
   .content .inner {
     padding: 16px;
     border-radius: 0;
     box-shadow: none;
   }
 
-  /* ===== FAQ ===== */
+  /* FAQ */
   .faq-item {
     margin-bottom: 16px;
   }
@@ -296,5 +296,4 @@ body {
   .box {
     margin-left: 0;
   }
-
 }
