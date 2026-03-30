@@ -48,12 +48,6 @@ body {
 }
 
 /* ナビ（PC） */
-.nav {
-  display: flex;
-  gap: 10px;
-  flex-wrap: nowrap;
-}
-
 .nav a {
   position: relative;
   text-decoration: none;
@@ -90,6 +84,7 @@ body {
 .nav a:hover {
   color: #2d3cff;
 }
+
 /* CTA */
 .cta {
   margin-left: auto; /* ←PCでも右固定 */
