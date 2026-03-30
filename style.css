@@ -54,7 +54,6 @@ body {
   flex-wrap: nowrap;
 }
 
-/* ナビリンク */
 .nav a {
   position: relative;
   text-decoration: none;
@@ -65,6 +64,7 @@ body {
   border-radius: 6px;
   white-space: nowrap;
   overflow: hidden;
+  z-index: 0; /* ←基準を明示 */
 }
 
 /* 背景アニメーション */
@@ -74,10 +74,13 @@ body {
   inset: 0;
   background: rgba(45,60,255,0.12);
   border-radius: 6px;
+
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.2s ease;
+
   z-index: -1;
+  pointer-events: none; /* ←クリック阻害防止（重要） */
 }
 
 .nav a:hover::before {
@@ -87,7 +90,6 @@ body {
 .nav a:hover {
   color: #2d3cff;
 }
-
 /* CTA */
 .cta {
   margin-left: auto; /* ←PCでも右固定 */
