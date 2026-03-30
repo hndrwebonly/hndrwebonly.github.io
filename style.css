@@ -25,6 +25,10 @@ body {
   justify-content: space-between;
   height: 64px;
   gap: 12px;
+
+  max-width: 1100px;   /* 追加 */
+  margin: 0 auto;      /* 中央寄せ */
+  padding: 0 24px;     /* 余白 */
 }
 
 /* ロゴ */
