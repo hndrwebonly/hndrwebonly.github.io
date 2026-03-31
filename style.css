@@ -258,6 +258,7 @@ body {
 
 
 
+  /* 吹き出し見出し */
 h2 {
   position: relative;/*相対位置*/
   padding-left: 1.2em;/*アイコン分のスペース*/
@@ -277,6 +278,110 @@ h2:before {
 }
 
 
+  /* 参加者見出し */
+
+h3 {
+  position: relative;/*相対位置*/
+  padding-left: 1.2em;/*アイコン分のスペース*/
+  line-height: 1.4;/*行高*/
+  font-size: 18px; 
+}
+
+h3:before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f183";/*アイコンのユニコード*/
+  font-weight: 900;
+  position: absolute;/*絶対位置*/
+  font-size: 1em;/*サイズ*/
+  left: 0;/*アイコンの位置*/
+  top: 0;/*アイコンの位置*/
+  color: #5ab9ff; /*アイコン色*/
+}
+
+  /* サークル見出し */
+
+h4 {
+  position: relative;/*相対位置*/
+  padding-left: 1.2em;/*アイコン分のスペース*/
+  line-height: 1.4;/*行高*/
+  font-size: 18px; 
+}
+
+h4:before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f304";/*アイコンのユニコード*/
+  font-weight: 900;
+  position: absolute;/*絶対位置*/
+  font-size: 1em;/*サイズ*/
+  left: 0;/*アイコンの位置*/
+  top: 0;/*アイコンの位置*/
+  color: #5ab9ff; /*アイコン色*/
+}
+
+/* 見出し */
+h5 {
+  position: relative;
+  background: #eff4ff;
+  padding: 2px 20px 2px 30px;
+  font-size: 18px;
+  color: #474747;
+  border-radius: 0 10px 10px 0;
+  display: inline-block;
+  margin-left: 26px;
+}
+
+h5:before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f041";
+  display: inline-block;
+  line-height: 40px;
+  position: absolute;
+  padding: 0em;
+  color: white;
+  background: #81a1e4;
+  font-weight: 900;
+  width: 40px;
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+  left: -1.35em;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  border-radius: 50%;
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.29);
+  border-bottom: solid 2px #4967b4;
+}
+
+.heading-31 {
+    position: relative;
+    padding: .5em .5em .2em 1em;
+    border-bottom: 3px solid #adb4ff;
+    color: #2d3ce1;
+  display: inline-block;
+}
+
+.heading-31::before {
+    position: absolute;
+    top: 0;
+    left: .3em;
+    transform: rotate(55deg);
+    height: 11px;
+    width: 12px;
+    background: #adb4ff;
+    content: '';
+}
+
+.heading-31::after {
+    position: absolute;
+    transform: rotate(15deg);
+    top: .6em;
+    left: 0;
+    height: 8px;
+    width: 8px;
+    background: #adb4ff;
+    content: '';
+}
 /* フキダシ */
 
 .fukidashi-02 {
@@ -350,6 +455,26 @@ h2:before {
   line-height: 1.8;
   color: #444;
   margin-left: 4px;
+}
+
+/* マーカー */
+.highlight {
+    background: linear-gradient(transparent 50%, #FADADD 0%);
+    line-height: 1.3em;
+}
+
+.highlight-blue {
+  font-weight: 700;
+  color: #007c99;
+  font-size: 1.15em;
+
+  background: linear-gradient(
+    transparent 60%,
+    #cfefff 0%
+  );
+
+  padding: 0 2px;
+  border-radius: 2px;
 }
 
 /* キャラ一覧ボックス（←5枚目デザイン） */
