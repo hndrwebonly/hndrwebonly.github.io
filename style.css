@@ -312,3 +312,11 @@ body {
     margin-left: 0;
   }
 }
+
+.form-desc {
+  margin: 10px 0 0 16px;
+}
+
+.select-box {
+  margin-left: 16px;
+}
